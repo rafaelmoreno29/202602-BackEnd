@@ -1,4 +1,4 @@
-# 📌 Desenvolvimento Web Back-End
+# 📌 Desenvolvimento Web Back-End e Arquitetura Web
 Bem-vindo(a) ao repositório da disciplina Desenvolvimento Web Back-End! Aqui você encontrará materiais, códigos-fonte e instruções para acompanhar o curso de desenvolvimento back-end com Java Spring Boot.
 
 ## 📚 Ementa da Disciplina
