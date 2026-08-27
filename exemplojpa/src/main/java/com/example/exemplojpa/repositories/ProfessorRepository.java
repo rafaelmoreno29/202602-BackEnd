@@ -24,4 +24,13 @@ public class ProfessorRepository {
         return entityManager
                 .createQuery("from Professor", Professor.class).getResultList();
     }
+
+    public Professor getById(Long id) {
+        return entityManager.find(Professor.class, id);
+    }
+
+    @Transactional
+    public void delete(Professor professor) {
+        entityManager.remove(professor);
+    }
 }
