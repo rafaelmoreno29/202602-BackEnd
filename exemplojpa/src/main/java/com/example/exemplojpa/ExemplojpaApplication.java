@@ -45,7 +45,16 @@ public class ExemplojpaApplication {
 							90.0, dpto1, disciplinas));
 
 			// Buscar todos os professores
-			List<Professor> professores = professorRepository.getAll();
+			List<Professor> professores = professorRepository.findAll();
+			professores.forEach(System.out::println);
+
+			System.out.println("Professores com valor hora aula"
+					+ "	maior que 95.0");
+			professores = professorRepository.findByValorHoraAulaGreaterThan(95.0);
+			professores.forEach(System.out::println);
+
+			System.out.println("Professor com nome Rafael");
+			professores = professorRepository.findByNomeLike("Rafael%");
 			professores.forEach(System.out::println);
 		};
 	}

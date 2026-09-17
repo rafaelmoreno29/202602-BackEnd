@@ -2,35 +2,24 @@ package com.example.exemplojpa.repositories;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 import com.example.exemplojpa.models.Professor;
 
-import jakarta.persistence.EntityManager;
-import jakarta.transaction.Transactional;
+public interface ProfessorRepository
+        extends JpaRepository<Professor, Long> {
 
-@Repository
-public class ProfessorRepository {
-    @Autowired
-    private EntityManager entityManager;
+    public List<Professor> findByNomeLike(String nome);
 
-    @Transactional
-    public Professor save(Professor professor) {
-        return entityManager.merge(professor);
-    }
+    public List<Professor> findByValorHoraAulaGreaterThan(Double valor);
 
-    public List<Professor> getAll() {
-        return entityManager
-                .createQuery("from Professor", Professor.class).getResultList();
-    }
+    // public List<Professor>
+    // findByTitulacaoAndValorHoraAulaGreaterThan(String titulacao,
+    // Double valor);
 
-    public Professor getById(Long id) {
-        return entityManager.find(Professor.class, id);
-    }
-
-    @Transactional
-    public void delete(Professor professor) {
-        entityManager.remove(professor);
-    }
+    @Query("SELECT p FROM Professor p WHERE p.titulacao = ?1 " +
+            "AND p.valorHoraAula > ?2")
+    public List<Professor> findByTituloEValorHora(String titulacao,
+            Double valor);
 }
