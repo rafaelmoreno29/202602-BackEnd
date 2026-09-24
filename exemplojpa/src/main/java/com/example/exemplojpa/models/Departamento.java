@@ -3,6 +3,7 @@ package com.example.exemplojpa.models;
 import java.util.List;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -14,7 +15,7 @@ public class Departamento {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
-    @OneToMany(mappedBy = "departamento")
+    @OneToMany(mappedBy = "departamento"/* , fetch=FetchType.EAGER */)
     private List<Professor> professores;
 
     public Departamento(Long id, String nome) {
