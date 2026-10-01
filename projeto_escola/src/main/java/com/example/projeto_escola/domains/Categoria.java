@@ -1,4 +1,4 @@
-package com.example.projeto_escola.models;
+package com.example.projeto_escola.domains;
 
 import java.util.List;
 

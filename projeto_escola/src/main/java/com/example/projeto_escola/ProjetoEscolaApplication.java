@@ -6,8 +6,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import com.example.projeto_escola.models.Categoria;
-import com.example.projeto_escola.models.Curso;
+import com.example.projeto_escola.domains.Categoria;
+import com.example.projeto_escola.domains.Curso;
 import com.example.projeto_escola.repositories.CategoriaRepository;
 import com.example.projeto_escola.repositories.CursoRepository;
 
