@@ -22,7 +22,7 @@ import lombok.ToString;
 @Data
 @Builder
 @NoArgsConstructor
-@AllArgsConstructor
+
 public class Curso {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,4 +34,11 @@ public class Curso {
     @JoinColumn(name = "categoria_id")
     @ToString.Exclude
     private Categoria categoria;
+
+    public Curso(Long id, String nome, Integer cargaHoraria, Categoria categoria) {
+        this.id = id;
+        this.nome = nome;
+        this.cargaHoraria = cargaHoraria;
+        this.categoria = categoria;
+    }
 }

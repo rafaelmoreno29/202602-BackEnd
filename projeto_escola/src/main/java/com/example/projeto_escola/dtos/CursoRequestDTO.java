@@ -5,7 +5,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Builder
@@ -14,4 +13,11 @@ public class CursoRequestDTO {
     private String nome;
     private Integer cargaHoraria;
     private Long categoriaId;
+
+    public CursoRequestDTO(Long id, String nome, Integer cargaHoraria, Long categoriaId) {
+        this.id = id;
+        this.nome = nome;
+        this.cargaHoraria = cargaHoraria;
+        this.categoriaId = categoriaId;
+    }
 }

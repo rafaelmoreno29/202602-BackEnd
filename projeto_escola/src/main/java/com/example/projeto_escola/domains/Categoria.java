@@ -20,8 +20,8 @@ import lombok.ToString;
 @Entity
 @Data
 @Builder
-@AllArgsConstructor
 @NoArgsConstructor
+
 public class Categoria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,4 +30,10 @@ public class Categoria {
     @OneToMany(mappedBy = "categoria"/* , fetch = FetchType.EAGER */)
 
     private List<Curso> cursos;
+
+    public Categoria(Long id, String nome, List<Curso> cursos) {
+        this.id = id;
+        this.nome = nome;
+        this.cursos = cursos;
+    }
 }
