@@ -9,6 +9,10 @@ public class ApiErrorDTO {
         this.errors = List.of(error);
     }
 
+    public ApiErrorDTO(List<String> errors) {
+        this.errors = errors;
+    }
+
     public List<String> getErrors() {
         return errors;
     }

@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.projeto_escola.dtos.CursoRequestDTO;
 import com.example.projeto_escola.services.CursoService;
 
+import jakarta.validation.Valid;
+
 import java.util.List;
 
 import org.springframework.http.HttpStatus;
@@ -29,7 +31,7 @@ public class CursoController {
 
     @PostMapping()
     @ResponseStatus(HttpStatus.CREATED)
-    public CursoRequestDTO inserir(@RequestBody CursoRequestDTO curso) {
+    public CursoRequestDTO inserir(@RequestBody @Valid CursoRequestDTO curso) {
         return cursoService.inserir(curso);
     }
 
